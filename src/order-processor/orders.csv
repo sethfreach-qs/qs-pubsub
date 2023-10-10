@@ -1,6 +1,6 @@
 order_id,customer_name,delivery_address,delivery_city,product_code,product_price
-1,Alice,123 Main St,London,abc123,14.99
-2,Bob,230 Blackfriars Rd,London,xyz999,123.00
-3,Charles,Victoria Square,Birmingham,zoo246,55.00
-4,Doug,12 Shambles,York,abc123,14.99
-5,Edward,2 High St,Manchester,aba888,34.99
+1,Alice,123 Main St,London,hamburger,14.99
+2,Bob,230 Blackfriars Rd,London,nachos,123.00
+3,Charles,Victoria Square,Birmingham,roast dinner,55.00
+4,Doug,12 Shambles,York,hamburger,14.99
+5,Edward,2 High St,Manchester,fresh fruit,34.99
