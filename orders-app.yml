@@ -1,0 +1,41 @@
+version: '3'
+services: 
+    order-processor:
+      build: ./src/order-processor
+      volumes:
+        - /tmp/ps/orders:/usr/src/app/orders
+      environment:
+        - KAFKA_BROKER=kafka1:19092
+        - KAFKA_LOG_TOPIC=test_topic
+    
+    city-london:
+      build: ./src/cities
+      environment:
+        - KAFKA_BROKER=kafka1:19092
+        - KAFKA_TOPIC=London
+      depends_on:
+        - order-processor
+
+    city-manchester:
+      build: ./src/cities
+      environment:
+        - KAFKA_BROKER=kafka1:19092
+        - KAFKA_TOPIC=Manchester
+      depends_on:
+        - order-processor
+
+    city-york:
+      build: ./src/cities
+      environment:
+        - KAFKA_BROKER=kafka1:19092
+        - KAFKA_TOPIC=York
+      depends_on:
+        - order-processor
+
+    payment-processor:
+      build: ./src/payments
+      environment:
+        - KAFKA_BROKER=kafka1:19092
+        - KAFKA_TOPIC=payment
+      depends_on:
+        - order-processor
